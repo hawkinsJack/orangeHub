@@ -3,17 +3,14 @@ import React from 'react'
 const Profile = ({ name, location, role, bio }) => {
 
     return (
-        <div>
-            <div>
-                <h3 className="profile-name">{name}</h3>
-            </div>
-            <div>
-                <h4 className="profile-location">{location}</h4>
-            </div>
-            <div>
+        <div className="card" style={{width: '18rem'}}>
+            <div className="card-body">
+                <h3 className="profile-name card-title">{name}</h3>
+
+                <h4 className="profile-location card-subtitle mb-2 text-muted">{location}</h4>
+            
                 <h4 className="profile-role">{role}</h4>
-            </div>
-            <div>
+            
                 <p className="profile-bio">{bio}</p>
             </div>
         </div>
