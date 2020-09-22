@@ -8,7 +8,7 @@ const Profile = ({ name, location, role, bio }) => {
     }
 
     return (
-        <div className="card w-auto mx-5 my-5 ">
+        <div className="card w-auto mx-2 my-2">
             <div className="card-body">
                 <h3 className="profile-name card-title">{name}</h3>
 
@@ -18,7 +18,7 @@ const Profile = ({ name, location, role, bio }) => {
 
                 <button onClick={handleOpen} type="button" class="btn btn-warning">Expand for Bio</button>
 
-                {open && <p className="profile-bio">{bio}</p>}
+                {open && <p className="profile-bio pt-3">{bio}</p>}
             </div>
         </div>
     )

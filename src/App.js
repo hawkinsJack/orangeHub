@@ -6,11 +6,11 @@ import ProfileList from './components/ProfileList/ProfileList';
 function App() {
   return (
     <div className="App">
-      <header>
-        <h2>Orange Hub</h2>
+      <header className="header">
+        <h2 className="header-text">Orange Hub</h2>
       </header>
       <main>
-        <ProfileList listTitle='Cohort List'/>
+        <ProfileList listTitle='Tech Associates' />
       </main>
       <footer>
 
