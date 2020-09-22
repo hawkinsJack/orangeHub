@@ -17,11 +17,11 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h2>Orange Hub</h2>
+      <header className="header">
+        <h2 className="header-text">Orange Hub</h2>
       </header>
       <main>
-        <ProfileList listTitle='Cohort List' profiles={profiles}/>
+        <ProfileList listTitle='Tech Associates' profiles={profiles}/>
       </main>
       <footer>
 

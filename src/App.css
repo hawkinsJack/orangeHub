@@ -2,8 +2,26 @@
   
   text-align: center;
 
-  color: orange;
+  color: #ff8200;
 
+}
+.header{
+   color: white;
+   background-color: #ff8200;
+   height: 100px;
+   margin-bottom: 100px
+}
+.header-text{
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 400px) {
+  .header{
+    height: 50px;
+  }
+  .header-text{
+    font-size: 2rem;
+  }
 }
 
 .profile-name{

@@ -1,18 +1,18 @@
 const profiles = [
-        
+
     {
         id: 1,
         name: 'Sarina Amin',
         bio: 'Bio',
         location: 'London',
-        role: 'engineer'
+        role: 'Engineer'
     },
     {
         id: 2,
         name: 'Jack2',
         bio: 'Bio',
         location: 'London',
-        role: 'engineer'
+        role: 'Engineer'
     },
     {
         id: 3,
