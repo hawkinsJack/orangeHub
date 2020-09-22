@@ -1,7 +1,9 @@
+
+
 import React, { useState } from 'react'
 
 const Profile = ({ name, location, role, bio }) => {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const handleOpen = () => {
         console.log(bio)
         setOpen(!open)
