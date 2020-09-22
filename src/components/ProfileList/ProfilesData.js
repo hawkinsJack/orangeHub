@@ -9,14 +9,14 @@ const profiles = [
     },
     {
         id: 2,
-        name: 'Jack',
+        name: 'Jack2',
         bio: 'Bio',
         location: 'London',
         role: 'engineer'
     },
     {
         id: 3,
-        name: 'Jack',
+        name: 'Jack3',
         bio: 'Bio',
         location: 'London',
         role: 'engineer'
