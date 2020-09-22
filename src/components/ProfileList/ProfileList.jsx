@@ -7,12 +7,15 @@ const ProfileList = ({ listTitle, profiles }) => {
     const [search, setSearch] = useState('')
     const Locations = ["All", "Aalborg", "Amsterdam", "London", "Oxford"]
     const [location, setLocation] = useState('All')
-    const Roles = ["All", "DevOps", "Network Engineer", "Software Engineer", "UX Engineer"]
-    const [role, setRole] = useState('All')
+    // const Roles = ["All", "DevOps", "Network Engineer", "Software Engineer", "UX Engineer"]
+    // const [role, setRole] = useState('All')
+    
     useEffect(() => {
+        if (!profiles || profiles.length === 0) {
+            return
+        }
         setFilteredProfiles(profiles)
-
-    }, [])
+    }, [profiles])
     useEffect(() => {
         if (location === "All") {
             setFilteredProfiles(profiles)
@@ -22,7 +25,7 @@ const ProfileList = ({ listTitle, profiles }) => {
         const filtered = profiles.filter(profile => (profile.Location === location))
         console.log(filtered)
         setFilteredProfiles(filtered)
-    }, [location])
+    }, [profiles, location])
 
     const handleUserInput = (event) => {
         console.log(event.target.value)
@@ -51,8 +54,8 @@ const ProfileList = ({ listTitle, profiles }) => {
                 {
                     filteredProfiles &&
                     filteredProfiles.length !== 0 &&
-                    filteredProfiles.filter((profile) => (profile.Name.toLowerCase().replace(/\s+/g, '').includes(search.replace(/\s+/g, '')))).map((profile) => (
-                        <Profile name={profile.Name} location={profile.Location} role={profile.Role} bio={profile.Bio} />
+                    filteredProfiles.filter((profile) => (profile.name.toLowerCase().replace(/\s+/g, '').includes(search.replace(/\s+/g, '')))).map((profile) => (
+                        <Profile name={profile.name} location={profile.location} role={profile.role} bio={profile.bio} />
                     ))
                 }
             </div>

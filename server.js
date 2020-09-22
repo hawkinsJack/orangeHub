@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { response } = require('express');
 const server = express();
 const port = 8080;
@@ -28,6 +29,7 @@ const profiles = [
     }
 ];
 
+server.use(cors())
 server.get('/api/profiles', (req, res) => {
     res.send(JSON.stringify(profiles));
 });
