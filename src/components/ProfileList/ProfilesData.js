@@ -16,21 +16,21 @@ const profiles = [
     },
     {
         id: 3,
-        name: 'Jack3',
+        name: 'Chris Kavanagh',
         bio: 'Bio',
-        location: 'London',
-        role: 'engineer'
+        location: 'Aalborg',
+        role: 'DevOps'
     }
 ];
 
-const rawData = [{"Name":"Samuel Syed","Joining date":"09/07/2020","Location":"london","Role":"DevOps","Bio":"MSc in Physics and a tech enthusiast with an insatiable curiosity and desire for self-development."},
-{"Name":"Mohammad Dasseh","Joining date":"07.09.2020","Location":"Oxford","Role":"Software engineer","Bio":"Ex-Mechanical Engineer. When I�m not at work I enjoy mountain climbing, running and reading."}
+const rawData = [{"Name":"Samuel Syed","Joining date":"09/07/2020","Location":"London","Role":"DevOps","Bio":"MSc in Physics and a tech enthusiast with an insatiable curiosity and desire for self-development."},
+{"Name":"Mohammad Dasseh","Joining date":"07.09.2020","Location":"Oxford","Role":"Software Engineer","Bio":"Ex-Mechanical Engineer. When Im not at work I enjoy mountain climbing, running and reading."}
 ,
 {"Name":"Chris Palmer","Joining date":"07.09.20","Location":"Amsterdam","Role":"DevOps","Bio":"MSc in Physics, into chess and amateur astronomy."},
 {"Name":"Lawrence Logan","Joining date":"07.09.20","Location":"Oxford","Role":"DevOps","Bio":"Biotech grad that�s into sailing, travelling and going to the pub. I will look after your pet, and make you a cuppa."}
 ,
-{"Name":"Luke Marmion","Joining date":"07.09.20","Location":"London (1AS)","Role":"DevOps","Bio":"TIO Core Engineering, pesto enthusiast, Chem Eng grad"},
-{"Name":"Celine Clausen","Joining date":"07.09.20","Location":"Aalborg (Denmark)","Role":"Software Engineer","Bio":"Recently graduated as a MSc of Economics, interested in Machine Learning, excellent at �cooking� take away for dinner, dressage rider and like to go for a short run."}
+{"Name":"Luke Marmion","Joining date":"07.09.20","Location":"London","Role":"DevOps","Bio":"TIO Core Engineering, pesto enthusiast, Chem Eng grad"},
+{"Name":"Celine Clausen","Joining date":"07.09.20","Location":"Aalborg","Role":"Software Engineer","Bio":"Recently graduated as a MSc of Economics, interested in Machine Learning, excellent at cooking take away for dinner, dressage rider and like to go for a short run."}
 ,
 {"Name":"Sophie Clark","Joining date":"07.09.20","Location":"Oxford","Role":"DevOps Engineer","Bio":"MSc Computer Science graduate currently learning how to cook."},
 {"Name":"Venetia Miller","Joining date":"07.09.20","Location":"Oxford","Role":"Software Engineer","Bio":"Newcastle university cheerleading pres 2018 , likes to draw animals ( especially cute dogs), is passionate about ethics and oncology !!"},
@@ -42,8 +42,7 @@ const rawData = [{"Name":"Samuel Syed","Joining date":"09/07/2020","Location":"l
 {"Name":"Rebecca Pavcic","Joining date":"07.09.20202","Location":"London (1AS)","Role":"Software Engineer","Bio":""},
 {"Name":"Andreas Tryfonos","Joining date":"07.09.2020","Location":"London","Role":"Software Engineer","Bio":"Recent graduate, Love travelling, reading, mixing music and sports"},
 {"Name":"Borsi Csokas","Joining date":"07.09.20","Location":"Aalborg","Role":"DevOps System Engineer","Bio":"Crazy cat lady in the making ;)"},
-{"Name":"Liam","Joining date":"07.09.20","Location":"London","Role":"DevOps Engineer","Bio":"Part time influencer"},
-{"Name":"Kemmitt","Joining date":"","Location":"","Role":"","Bio":""},
+{"Name":"Liam Kemmitt","Joining date":"07.09.20","Location":"London","Role":"DevOps Engineer","Bio":"Part time influencer"},
 {"Name":"Sneha Manikandan","Joining date":"07.09.20","Location":"London","Role":"Quality Engineer","Bio":"Nature Lover, Traveller"},
 {"Name":"Charlie Martin","Joining date":"07.09.20","Location":"Oxford","Role":"Software Engineer","Bio":""},
 {"Name":"Omar Shah","Joining date":"07.09.20","Location":"Amsterdam","Role":"DevOps Engineer","Bio":"Recent Graduate and food enthusiast. Critical of the tech industry, but optimistic that we can use AI for good."},
