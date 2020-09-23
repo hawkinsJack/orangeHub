@@ -213,12 +213,35 @@ const profiles = [
         location: 'Oxford',
         role: 'DevOps',
         joined: '2020'
+    },
+
+    {
+        id: 27,
+        name: 'test',
+        bio: 'People-person with a passion for robotics. Always up for travelling.',
+        location: 'Oxford',
+        role: 'DevOps',
+        joined: '2019'
     }
 ];
 
 server.use(cors())
 server.get('/api/profiles', (req, res) => {
-    res.send(JSON.stringify(profiles));
+
+    const alphaSort = profiles.sort(function(a,b) {
+        if (a.name > b.name){
+            return -1
+
+        }
+
+        if (b.name > a.name){
+            return 1
+            
+        }
+        return 0
+    })
+
+    res.send(JSON.stringify(alphaSort.reverse()));
 });
 
 server.listen(port);

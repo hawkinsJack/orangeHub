@@ -14,6 +14,9 @@ const ProfileList = ({ listTitle, profiles }) => {
     const Roles = ["All", "DevOps", "Software Engineer", "UX Engineer"];
     const [role, setRole] = useState('All');
 
+    const Years = ["All", "2019", "2020"];
+    const [year, setYear] = useState('All')
+
     useEffect(() => {
         if (!profiles || profiles.length === 0) {
             return
@@ -22,28 +25,62 @@ const ProfileList = ({ listTitle, profiles }) => {
     }, [profiles]);
 
 
-    const filterProfilesByLocationAndRole = useCallback(() => {
+    const filterProfilesByLocationAndRoleAndYear = useCallback(() => {
 
-        if (location === 'All' && role === 'All') {
+        const profileFilter = {
+            location, 
+            role, 
+            joined: year
+        };
+
+        if (location === 'All' && role === 'All' && year === 'All') {
             setFilteredProfiles(profiles)
-        } else if(role === 'All' && location !== 'All' ){
-            const filtered = profiles.filter(profile => (profile.location === location))
-            setFilteredProfiles(filtered)
-        } else if(location === 'All' && role !== 'All'){
-            const filtered = profiles.filter(profile => (profile.role === role))
-            setFilteredProfiles(filtered)
-        } else if(location !== 'All' && role !== 'All'){
-            const filtered = profiles.filter(profile => (profile.role === role && profile.location === location))
-            setFilteredProfiles(filtered)
-        }
-        
-    }, [profiles, location, role])
+            return
+        } 
 
+        const fp = profiles.filter((profile) => {
+
+            for(const key in profileFilter){
+
+                if(profileFilter[key] !== profile[key]){
+                    return false
+                }
+
+                return true;
+            }
+        });
+
+        console.log(fp)
+
+    
+
+
+
+    //     let filtered
+    //     if (location === 'All' && role === 'All' && year === 'All') {
+    //         setFilteredProfiles(profiles)
+    //     return
+    //     } else if (role === 'All' && location !== 'All' && year === 'All') {
+    //         filtered = profiles.filter(profile => (profile.location === location))
+    //     } else if (location === 'All' && role !== 'All' && year === 'All') {
+    //         filtered = profiles.filter(profile => (profile.role === role))
+    //     } else if (location === 'All' && role === 'All' && year !== 'All') {
+    //         filtered = profiles.filter(profile => (profile.joined === year))
+    //     } else if (location !== 'All' && role !== 'All' && year !== 'All') {
+    //         filtered = profiles.filter(profile => (profile.role === role && profile.location === location && profile.joined === year))
+    //     } else {
+    //         setFilteredProfiles(profiles)
+    //         return
+    //     }
+    //     setFilteredProfiles(filtered)
+        
+    }, [profiles, location, role, year])
+    
     useEffect(() => {
 
-       filterProfilesByLocationAndRole()
+        filterProfilesByLocationAndRoleAndYear()
 
-    }, [filterProfilesByLocationAndRole])
+    }, [filterProfilesByLocationAndRoleAndYear])
 
     const handleUserInput = (event) => {
         setSearch(event.target.value)
@@ -55,6 +92,10 @@ const ProfileList = ({ listTitle, profiles }) => {
 
     const handleRoleChange = (event) => {
         setRole(event.target.value)
+    };
+
+    const handleYearChange = (event) => {
+        setYear(event.target.value)
     };
 
     const lowerCaseAndRemoveWhitespace = (str) => {
@@ -84,6 +125,20 @@ const ProfileList = ({ listTitle, profiles }) => {
                     ))
                 }
 
+
+
+            </select>
+
+            <select value={year} onChange={(e) => handleYearChange(e)} >
+                {
+                    Years.map((y) => (
+
+                        <option value={y}>{y}</option>
+                    ))
+                }
+
+
+
             </select>
             <div class="container">
                 <div class="row">
@@ -92,7 +147,7 @@ const ProfileList = ({ listTitle, profiles }) => {
                         filteredProfiles.length !== 0 &&
                         filteredProfiles.filter((profile) => (lowerCaseAndRemoveWhitespace(profile.name).includes(lowerCaseAndRemoveWhitespace(search)))).map((profile) => (
                             <div class="col-md-6 col-lg-4">
-                                <Profile name={profile.name} location={profile.location} role={profile.role} bio={profile.bio} />
+                                <Profile name={profile.name} location={profile.location} role={profile.role} bio={profile.bio} joined={profile.joined} />
                             </div>
                         ))
                     }

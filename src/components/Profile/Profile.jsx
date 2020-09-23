@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Profile = ({ name, location, role, bio }) => {
+const Profile = ({ name, location, role, bio, joined }) => {
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => {
@@ -15,6 +15,8 @@ const Profile = ({ name, location, role, bio }) => {
                 <h4 className="profile-location card-subtitle mb-2 text-muted">{location}</h4>
 
                 <h4 className="profile-role">{role}</h4>
+
+                <h4 className="profile-role">{joined}</h4>
 
                 <button onClick={handleOpen} type="button" class="btn btn-warning">{!open ? 'Expand for Bio' : 'close'}</button>
 
