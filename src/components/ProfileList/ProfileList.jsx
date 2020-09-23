@@ -48,10 +48,8 @@ const ProfileList = ({ listTitle, profiles }) => {
                     <input type="text" class="form-control" placeholder="Search" name="searchName" value={search} onChange={(e) => handleUserInput(e)} />
                 </div>
 
-
                 <div>
-                    <label for="inputLocation">Location:</label>
-                    <input type="text" class="form-control" id="inputLocation"/>
+                    <label for="inputLocation" font-size="5rem">Location:</label>
                 </div>
 
                 <div class="col">
