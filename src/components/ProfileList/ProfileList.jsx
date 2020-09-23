@@ -38,18 +38,35 @@ const ProfileList = ({ listTitle, profiles }) => {
     }
     return (
         <div className="container">
-            <img src="/elsevierlogo.png" class="img-fluid mb-5 px-5" alt="Elsevier Logo"></img>
-            <hr style={{ width: '75%', textAlign: 'center', }}></hr>
+            <img src="/elsevierlogo.png" class="img-fluid mb-5 px-5" alt="Elsevier Logo"/>
+            <hr style={{ width: '75%', textAlign: 'center', }}/>
             <h2>{listTitle ? listTitle : 'Cohort Profiles'}</h2>
-            <input type="text" name="searchName" value={search} onChange={(e) => handleUserInput(e)} />
-            <select value={location} onChange={(e) => handleLocationChange(e)}>
-                {
-                    Locations.map(location => (
+            
+            
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Search" name="searchName" value={search} onChange={(e) => handleUserInput(e)} />
+                </div>
 
-                        <option value={location}>{location}</option>))
-                }
 
-            </select>
+                <div>
+                    <label for="inputLocation">Location:</label>
+                    <input type="text" class="form-control" id="inputLocation"/>
+                </div>
+
+                <div class="col">
+                    <select class="form-control" value={location} onChange={(e) => handleLocationChange(e)}>
+                        {
+                            Locations.map(location => (
+
+                                <option value={location}>{location}</option>))
+                        }
+
+                    </select>
+                </div>
+            </div>
+
+
             <div class="container">
                 <div class="row">
                     {

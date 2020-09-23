@@ -8,7 +8,7 @@ In order to start this project you must first run:
 
 to start to development server.
 
-Then run:
+Then in a new terminal, simultaneously run:
 
 ### `npm start`
 
