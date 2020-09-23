@@ -16,7 +16,7 @@ const Profile = ({ name, location, role, bio }) => {
 
                 <h4 className="profile-role">{role}</h4>
 
-                <button onClick={handleOpen} type="button" class="btn btn-warning">Expand for Bio</button>
+                <button onClick={handleOpen} type="button" class="btn btn-warning">{!open ? 'Expand for Bio' : 'close'}</button>
 
                 {open && <p className="profile-bio pt-3">{bio}</p>}
             </div>
