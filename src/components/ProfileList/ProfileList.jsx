@@ -1,41 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Profile from '../Profile/Profile';
 
 
 const ProfileList = ({ listTitle, profiles }) => {
+
     const [filteredProfiles, setFilteredProfiles] = useState([])
+
     const [search, setSearch] = useState('')
+
     const Locations = ["All", "Aalborg", "Amsterdam", "London", "Oxford"]
     const [location, setLocation] = useState('All')
-    // const Roles = ["All", "DevOps", "Network Engineer", "Software Engineer", "UX Engineer"]
-    // const [role, setRole] = useState('All')
+
+    const Roles = ["All", "DevOps", "Software Engineer", "UX Engineer"];
+    const [role, setRole] = useState('All');
 
     useEffect(() => {
         if (!profiles || profiles.length === 0) {
             return
         }
         setFilteredProfiles(profiles)
-    }, [profiles])
-    useEffect(() => {
-        if (location === "All") {
+    }, [profiles]);
+
+
+    const filterProfilesByLocationAndRole = useCallback(() => {
+
+        if (location === 'All' && role === 'All') {
             setFilteredProfiles(profiles)
-            return
+        } else if(role === 'All' && location !== 'All' ){
+            const filtered = profiles.filter(profile => (profile.location === location))
+            setFilteredProfiles(filtered)
+        } else if(location === 'All' && role !== 'All'){
+            const filtered = profiles.filter(profile => (profile.role === role))
+            setFilteredProfiles(filtered)
+        } else if(location !== 'All' && role !== 'All'){
+            const filtered = profiles.filter(profile => (profile.role === role && profile.location === location))
+            setFilteredProfiles(filtered)
         }
-        console.log(location)
-        const filtered = profiles.filter(profile => (profile.location === location))
-        console.log(filtered)
-        setFilteredProfiles(filtered)
-    }, [profiles, location])
+        
+    }, [profiles, location, role])
+
+    useEffect(() => {
+
+       filterProfilesByLocationAndRole()
+
+    }, [filterProfilesByLocationAndRole])
 
     const handleUserInput = (event) => {
-        console.log(event.target.value)
-        console.log(event.target)
-        setSearch((event.target.value).toLowerCase())
-    }
-    const handleLocationChange = (event) => {
+        setSearch(event.target.value)
+    };
 
+    const handleLocationChange = (event) => {
         setLocation(event.target.value)
+    };
+
+    const handleRoleChange = (event) => {
+        setRole(event.target.value)
+    };
+
+    const lowerCaseAndRemoveWhitespace = (str) => {
+        return str.toLowerCase().replace(/\s+/g, '');
     }
+
+
     return (
         <div className="container">
             <img src="/elsevierlogo.png" class="img-fluid mb-5 px-5" alt="Elsevier Logo"></img>
@@ -50,13 +76,21 @@ const ProfileList = ({ listTitle, profiles }) => {
                 }
 
             </select>
+            <select value={role} onChange={(e) => handleRoleChange(e)} >
+                {
+                    Roles.map((r) => (
+
+                        <option value={r}>{r}</option>
+                    ))
+                }
+
+            </select>
             <div class="container">
                 <div class="row">
                     {
                         filteredProfiles &&
                         filteredProfiles.length !== 0 &&
-
-                        filteredProfiles.filter((profile) => (profile.name.toLowerCase().replace(/\s+/g, '').includes(search.replace(/\s+/g, '')))).map((profile) => (
+                        filteredProfiles.filter((profile) => (lowerCaseAndRemoveWhitespace(profile.name).includes(lowerCaseAndRemoveWhitespace(search)))).map((profile) => (
                             <div class="col-md-6 col-lg-4">
                                 <Profile name={profile.name} location={profile.location} role={profile.role} bio={profile.bio} />
                             </div>
