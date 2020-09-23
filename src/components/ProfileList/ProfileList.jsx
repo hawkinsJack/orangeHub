@@ -22,7 +22,7 @@ const ProfileList = ({ listTitle, profiles }) => {
             return
         }
         console.log(location)
-        const filtered = profiles.filter(profile => (profile.Location === location))
+        const filtered = profiles.filter(profile => (profile.location === location))
         console.log(filtered)
         setFilteredProfiles(filtered)
     }, [profiles, location])
