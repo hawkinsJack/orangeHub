@@ -124,7 +124,6 @@ const ProfileList = ({ listTitle, profiles }) => {
             </div>
 
             <div class="container">
-                <div className="card-deck md-sm-3">
                     <div class="row">
                         {
                             filteredProfiles &&
@@ -136,7 +135,6 @@ const ProfileList = ({ listTitle, profiles }) => {
                             ))
                         }
                     </div>
-                </div>
             </div>
         </div>
     )
