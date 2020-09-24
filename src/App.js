@@ -3,10 +3,13 @@ import './App.css';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProfileList from './components/ProfileList/ProfileList';
 import { getProfiles } from './GetProfiles';
-
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 import LoginAdmin from './services/LoginAdmin';
 import CreateProfile from './services/CreateProfile';
 import NewProfileForm from './components/NewProfile/NewProfileForm';
+
+import Navbar from './components/Navbar/Navbar';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -14,6 +17,9 @@ import MuiAlert from '@material-ui/lab/Alert';
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
+
+
+
 
 function App() {
 
@@ -92,14 +98,15 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div style={{
+        <Navbar />
+        {/* <div style={{
           display: 'flex',
           justifyContent: 'space-between'
         }}>
           <div style={{
             flex: '1'
           }}>
-            <h2 className="header-text">Orange Hub</h2>
+            <h2 className="header-text">OrangeHub</h2>
           </div>
           {
             currentAdmin &&
@@ -110,14 +117,16 @@ function App() {
               alignItems: 'center',
               paddingRight: '1rem'
             }}>
+                <div>
+                  <span>Currently logged in as: {currentAdmin.name}</span>
+                </div>
               <div onClick={() => setShowNewUserForm(!showNewUserForm)}>
-                <p>+</p><p>Add new Associate</p>
-              </div>
-              <div>
-                <h4>{currentAdmin.name}</h4>
+                <AiOutlineUserAdd color="white" size='2rem'/>
+                <p>Create New Profile</p>
               </div>
               <div onClick={() => setCurrentAdmin('')}>
-                <h4>Logout</h4>
+                <IoIosLogOut color="white" size='2rem'/>
+                <p>Log Out</p>
               </div> 
             </div>
           }
@@ -132,16 +141,16 @@ function App() {
               paddingRight: '1rem'
             }}
             onClick={() => handleLoginOpen()}>
-              <p>Login</p>
+              <IoIosLogIn color="white" size='2rem'/>
+              <p>Log In</p>
             </div>
           }
-        </div>
+        </div> */}
       </header>
       <main>
   
         <AdminLogin loginAdmin={loginAdmin} open={showAdminLogin} handleClose={handleLoginClose}/>
         <NewProfileForm addUser={addUser} open={showNewUserForm} handleClose={handleNewProfileFormClose} roles={roles} locations={locations} years={years} />
-
         <ProfileList listTitle='Tech Associates' profiles={profiles} />
         <Snackbar open={successMessageOpen} autoHideDuration={6000}>
           <Alert severity="success">
