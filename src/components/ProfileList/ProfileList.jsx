@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Profile from '../Profile/Profile';
 
-
 const ProfileList = ({ listTitle, profiles }) => {
     const [filteredProfiles, setFilteredProfiles] = useState([])
     const [search, setSearch] = useState('')
@@ -42,12 +41,11 @@ const ProfileList = ({ listTitle, profiles }) => {
             <hr style={{ width: '75%', textAlign: 'center', }} />
             <h2>{listTitle ? listTitle : 'Cohort Profiles'}</h2>
 
-
             <div class="form-row m-5">
-                <div class="col-sm-12 col-md-9">
+                <div class="col-sm-12 col-md-9 mb-sm-3 mb-md-0">
                     <input type="text" class="form-control" placeholder="Search" name="searchName" value={search} onChange={(e) => handleUserInput(e)} />
                 </div>
-                <div class="col-sm-12 col-md-2">
+                <div class="col-sm-12 mb-sm-3 col-md-2">
                     <select class="form-control" onChange={(e) => handleLocationChange(e)}>
                         <option value="Select location" disabled selected hidden>Select Location...</option>
                         {
@@ -61,7 +59,6 @@ const ProfileList = ({ listTitle, profiles }) => {
                     </select>
                 </div>
             </div>
-
 
             <div class="container">
                 <div class="row">
