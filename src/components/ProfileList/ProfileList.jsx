@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Profile from '../Profile/Profile';
 
-
 const ProfileList = ({ listTitle, profiles }) => {
 
     const [filteredProfiles, setFilteredProfiles] = useState(profiles)
@@ -79,8 +78,8 @@ const ProfileList = ({ listTitle, profiles }) => {
 
     return (
         <div className="container">
-            <img src="/elsevierlogo.png" class="img-fluid mb-5 px-5" alt="Elsevier Logo"></img>
-            <hr style={{ width: '75%', textAlign: 'center', }}></hr>
+            <img src="/elsevierlogo.png" class="img-fluid mb-5 px-5" alt="Elsevier Logo" />
+            <hr style={{ width: '75%', textAlign: 'center', }} />
             <h2>{listTitle ? listTitle : 'Cohort Profiles'}</h2>
             <input type="text" name="searchName" value={search} onChange={(e) => handleUserInput(e)} />
             <select value={location} onChange={(e) => handleLocationChange(e)}>
