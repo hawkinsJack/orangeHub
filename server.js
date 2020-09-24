@@ -12,7 +12,7 @@ const profiles = [
         bio: 'MSc in Physics and a tech enthusiast with an insatiable curiosity and desire for self-development.',
         location: 'London',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ const profiles = [
         bio: 'Ex-Mechanical Engineer. When Im not at work I enjoy mountain climbing, running and reading',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const profiles = [
         bio: 'MSc in Physics, into chess and amateur astronomy.',
         location: 'Amsterdam',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 4,
@@ -36,7 +36,7 @@ const profiles = [
         bio: `Biotech grad that's into sailing, travelling and going to the pub. I will look after your pet, and make you a cuppa.`,
         location: 'Oxford',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ const profiles = [
         bio: 'TIO Core Engineering, pesto enthusiast, Chem Eng grad',
         location: 'London',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const profiles = [
         bio: 'Recently graduated as a MSc of Economics, interested in Machine Learning, excellent at cooking take away for dinner, dressage rider and like to go for a short run.',
         location: 'Aalborg',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const profiles = [
         bio: 'MSc Computer Science graduate currently learning how to cook',
         location: 'Oxford',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 8,
@@ -68,7 +68,7 @@ const profiles = [
         bio: 'Newcastle University cheerleading pres 2018, likes to draw animals ( especially cute dogs), is passionate about ethics and oncology!!',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 9,
@@ -76,7 +76,7 @@ const profiles = [
         bio: 'Runner-Up finish in my Year 4 class spelling competition',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 10,
@@ -84,7 +84,7 @@ const profiles = [
         bio: 'MSc Aircraft Engineering',
         location: 'Aalborg',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 11,
@@ -92,7 +92,7 @@ const profiles = [
         bio: 'Kahoot enthusiast',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 12,
@@ -100,7 +100,7 @@ const profiles = [
         bio: 'Just a friendly face :)',
         location: 'Oxford',
         role: 'Network Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 13,
@@ -108,7 +108,7 @@ const profiles = [
         bio: '',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 14,
@@ -116,7 +116,7 @@ const profiles = [
         bio: '',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 15,
@@ -124,7 +124,7 @@ const profiles = [
         bio: 'Recent graduate, Love travelling, reading, mixing music and sports',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 16,
@@ -132,7 +132,7 @@ const profiles = [
         bio: 'Crazy cat lady in the making ;)',
         location: 'Aalborg',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 17,
@@ -140,7 +140,7 @@ const profiles = [
         bio: 'Part time influencer',
         location: 'Aalborg',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 18,
@@ -148,7 +148,7 @@ const profiles = [
         bio: 'Nature Lover, Traveller',
         location: 'London',
         role: 'Quality Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 19,
@@ -156,7 +156,7 @@ const profiles = [
         bio: '',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 20,
@@ -164,7 +164,7 @@ const profiles = [
         bio: 'Recent Graduate and food enthusiast. Critical of the tech industry, but optimistic that we can use AI for good.',
         location: 'Amsterdam',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 21,
@@ -172,7 +172,7 @@ const profiles = [
         bio: 'Biomedical Science graduate. Enjoy cycling and wine.',
         location: 'Oxford',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 22,
@@ -180,7 +180,7 @@ const profiles = [
         bio: 'Recent graduate into walking, travelling and anything dog related.',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 23,
@@ -188,7 +188,7 @@ const profiles = [
         bio: '',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 24,
@@ -196,7 +196,7 @@ const profiles = [
         bio: 'Physics grad with a love for cats, plants and computers.',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 25,
@@ -204,7 +204,7 @@ const profiles = [
         bio: '',
         location: 'London',
         role: 'Software Engineer',
-        joined: '2020'
+        year: '2020'
     },
     {
         id: 26,
@@ -212,13 +212,36 @@ const profiles = [
         bio: 'People-person with a passion for robotics. Always up for travelling.',
         location: 'Oxford',
         role: 'DevOps',
-        joined: '2020'
+        year: '2020'
+    },
+
+    {
+        id: 27,
+        name: 'test',
+        bio: 'People-person with a passion for robotics. Always up for travelling.',
+        location: 'Oxford',
+        role: 'DevOps',
+        year: '2019'
     }
 ];
 
 server.use(cors())
 server.get('/api/profiles', (req, res) => {
-    res.send(JSON.stringify(profiles));
+
+    const alphaSort = profiles.sort(function(a,b) {
+        if (a.name > b.name){
+            return -1
+
+        }
+
+        if (b.name > a.name){
+            return 1
+            
+        }
+        return 0
+    })
+
+    res.send(JSON.stringify(alphaSort.reverse()));
 });
 
 server.listen(port);
