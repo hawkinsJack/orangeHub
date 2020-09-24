@@ -81,7 +81,7 @@ const profiles = [
     {
         id: 10,
         name: 'Chris Kavanagh',
-        bio: 'MSc Aircraft Engineering',
+        bio: 'MSc Aircraft Engineering, Four Eyed',
         location: 'Aalborg',
         role: 'DevOps',
         year: '2020'

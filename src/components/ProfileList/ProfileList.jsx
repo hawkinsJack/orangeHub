@@ -10,7 +10,7 @@ const ProfileList = ({ listTitle, profiles }) => {
     const Locations = ["Aalborg", "Amsterdam", "London", "Oxford"]
     const [location, setLocation] = useState('')
 
-    const Roles = ["DevOps", "Software Engineer", "UX Engineer"];
+    const Roles = ["DevOps", "Network Engineer", "Quality Engineer", "Software Engineer", "UX Engineer"];
     const [role, setRole] = useState('');
 
     const Years = ["2019", "2020"];
