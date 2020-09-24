@@ -3,9 +3,10 @@ const cors = require('cors');
 const { response } = require('express');
 const server = express();
 const port = 8080;
+const bodyParser = require('body-parser');
 
 const profiles = [
-        
+
     {
         id: 1,
         name: 'Samuel Syed',
@@ -225,23 +226,116 @@ const profiles = [
     }
 ];
 
-server.use(cors())
+const locations = [
+    {
+        id: 551,
+        name: "Aalborg"
+    },
+    {
+        id: 552,
+        name: "Amsterdam"
+    },
+    {
+        id: 553,
+        name: "London"
+    },
+    {
+        id: 554,
+        name: "Oxford"
+    }
+]
+
+const roles = [
+    {
+        id: 71,
+        name: "DevOps"
+    },
+    {
+        id: 72,
+        name: "Quality Engineer"
+    },
+    {
+        id: 73,
+        name: "Software Engineer"
+    }
+]
+
+const years = [
+    {
+        id: 80,
+        name: "2017"
+    },
+    {
+        id: 81,
+        name: "2018"
+    },
+    {
+        id: 82,
+        name: "2019"
+    },
+    {
+        id: 83,
+        name: "2020"
+    }
+]
+
+const admins = [
+    {
+        name: 'Admin One',
+        email: 'email1@email',
+        password: 'password1'
+    }
+]
+
+server.use(cors());
+server.use(bodyParser.json())
+
 server.get('/api/profiles', (req, res) => {
 
-    const alphaSort = profiles.sort(function(a,b) {
-        if (a.name > b.name){
+    const alphaSort = profiles.sort(function (a, b) {
+        if (a.name > b.name) {
             return -1
 
         }
 
-        if (b.name > a.name){
+        if (b.name > a.name) {
             return 1
-            
+
         }
         return 0
     })
 
-    res.send(JSON.stringify(alphaSort.reverse()));
+    const dataObj = {
+        profiles: alphaSort.reverse(),
+        roles: roles,
+        locations: locations,
+        years: years
+    }
+
+    res.send(JSON.stringify(dataObj));
+});
+
+server.post('/api/profiles', (req, res) => {
+
+    res.send(JSON.stringify(req.body));
+});
+
+server.post('/api/login', (req, res) => {
+
+    const email = req.body.email
+    const password = req.body.password
+
+
+    for (let i = 0; i < admins.length; i++) {
+
+        if ((admins[i].email === email) && (admins[i].password === password)) {
+            res.send(JSON.stringify(admins[i]));
+        }
+    }
+
+
+
+
 });
 
 server.listen(port);
