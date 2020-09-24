@@ -17,6 +17,8 @@ const ProfileList = ({ listTitle, profiles }) => {
     const Years = ["2019", "2020"];
     const [year, setYear] = useState('')
 
+    
+
     useEffect(() => {
         if (!profiles || profiles.length === 0) {
             return
@@ -35,6 +37,7 @@ const ProfileList = ({ listTitle, profiles }) => {
             const l = filterProfiles(location, 'location', p)
             const r = filterProfiles(role, 'role', p)
             const y = filterProfiles(year, 'year', p)
+
 
             if ((l === true || l === undefined) && (r === true || r === undefined) && (y === true || y === undefined)) {
                 return true
