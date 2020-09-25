@@ -114,10 +114,14 @@ const NewProfileForm = ({ addUser, roles, locations, years, open, handleClose })
                         fullWidth
                     />
                     
-                    <button onClick={() => handleClose()}>
+                    <button 
+                    className="btn bg-light"
+                    onClick={() => handleClose()}>
                         Close
                    </button>
-                   <button type="submit">
+                   <button 
+                   className="btn bg-light"
+                   type="submit">
                         Create Profile
                    </button>
                 </form>

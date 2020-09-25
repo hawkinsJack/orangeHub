@@ -2,7 +2,7 @@ import React from 'react'
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 
-const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLogout }) => {
+const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleConfirmLogoutOpen }) => {
 
 
     return (
@@ -10,7 +10,7 @@ const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLo
             <img src="/OrangeHubLogo.png" width="60" height="60" class="d-inline-block align-top mr-3" alt="" loading="lazy" ></img>
             <span className="navbar-brand-orange">OrangeHub</span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
@@ -34,7 +34,7 @@ const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLo
                             </li>
                             <li>
                                 <div 
-                                onClick={() => handleLogout()}
+                                onClick={() => handleConfirmLogoutOpen()}
                                 style={{
                                     margin: '1rem'
                                 }}>

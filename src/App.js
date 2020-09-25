@@ -6,6 +6,7 @@ import { getProfiles } from './GetProfiles';
 import LoginAdmin from './services/LoginAdmin';
 import CreateProfile from './services/CreateProfile';
 import NewProfileForm from './components/NewProfile/NewProfileForm';
+import ConfirmLogout from './components/HandleLogout/ConfirmLogout';
 
 import Navbar from './components/Navbar/Navbar';
 
@@ -30,6 +31,9 @@ function App() {
   const [currentAdmin, setCurrentAdmin] = useState(null);
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [showNewUserForm, setShowNewUserForm] = useState(false);
+
+  const [logoutOpen, setLogoutOpen] = useState(false);
+
 
 
 
@@ -60,15 +64,23 @@ function App() {
 
     const admin = await LoginAdmin({ email, password })
 
+    if(admin.fail){
+      setFailMessage(admin.message)
+      return;
+    }
+
     setCurrentAdmin(admin)
     setShowAdminLogin(false)
     setSucccessMessageOpen(true)
-    setSuccessMessage('Successfully Logged in as Admin')
+    setSuccessMessage('Successfully Logged in as Admin!')
 
   };
 
   const handleLogout = () => {
+    setLogoutOpen(false)
     setCurrentAdmin('')
+    setSucccessMessageOpen(true)
+    setSuccessMessage('Successfully Logged out!')
   }
 
   const addUser = async (user) => {
@@ -98,6 +110,14 @@ function App() {
     setShowNewUserForm(false)
   }
 
+  const handleConfirmLogoutOpen = () => {
+    setLogoutOpen(true)
+  }
+
+  const closeConfirmLogout = () => {
+    setLogoutOpen(false)
+  }
+
   return (
     <div className="App">
       <header className="header">
@@ -105,12 +125,29 @@ function App() {
         currentAdmin={currentAdmin} 
         handleNewUserFormOpen={handleNewUserFormOpen} 
         handleLoginOpen={handleLoginOpen}
-        handleLogout={handleLogout}/>
+        handleConfirmLogoutOpen={handleConfirmLogoutOpen}/>
       </header>
       <main>
   
-        <AdminLogin loginAdmin={loginAdmin} open={showAdminLogin} handleClose={handleLoginClose}/>
-        <NewProfileForm addUser={addUser} open={showNewUserForm} handleClose={handleNewProfileFormClose} roles={roles} locations={locations} years={years} />
+        <AdminLogin 
+        loginAdmin={loginAdmin} 
+        open={showAdminLogin} 
+        handleClose={handleLoginClose}
+        failMessage={failMessage}/>
+
+        <NewProfileForm 
+        addUser={addUser} 
+        open={showNewUserForm} 
+        handleClose={handleNewProfileFormClose} 
+        roles={roles} 
+        locations={locations} 
+        years={years} />
+
+        <ConfirmLogout 
+        logoutOpen={logoutOpen}
+        handleLogout={handleLogout}
+        closeConfirmLogout={closeConfirmLogout}/>
+
         <ProfileList listTitle='Tech Associates' profiles={profiles} />
         <Snackbar open={successMessageOpen} autoHideDuration={6000}>
           <Alert severity="success">
