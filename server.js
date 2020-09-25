@@ -330,12 +330,18 @@ server.post('/api/login', (req, res) => {
 
         if ((admins[i].email === email) && (admins[i].password === password)) {
             res.send(JSON.stringify(admins[i]));
-        }
+        
+        } else {
+
+            const fail = {
+                fail: true,
+                message: 'Either Username or Password does not exist'
+            }   
+        
+            res.send(JSON.stringify(fail))
+
+        }  
     }
-
-
-
-
 });
 
 server.listen(port);

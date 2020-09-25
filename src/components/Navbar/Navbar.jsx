@@ -2,14 +2,14 @@ import React from 'react'
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 
-const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLogout }) => {
+const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleConfirmLogoutOpen }) => {
 
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <span className="navbar-brand">OrangeHub</span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
@@ -33,7 +33,7 @@ const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLo
                             </li>
                             <li>
                                 <div 
-                                onClick={() => handleLogout()}
+                                onClick={() => handleConfirmLogoutOpen()}
                                 style={{
                                     margin: '1rem'
                                 }}>
