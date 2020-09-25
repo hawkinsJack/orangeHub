@@ -3,8 +3,6 @@ import './App.css';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProfileList from './components/ProfileList/ProfileList';
 import { getProfiles } from './GetProfiles';
-import { AiOutlineUserAdd } from "react-icons/ai";
-import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 import LoginAdmin from './services/LoginAdmin';
 import CreateProfile from './services/CreateProfile';
 import NewProfileForm from './components/NewProfile/NewProfileForm';
@@ -17,9 +15,6 @@ import MuiAlert from '@material-ui/lab/Alert';
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
-
-
-
 
 function App() {
 
@@ -72,6 +67,10 @@ function App() {
 
   };
 
+  const handleLogout = () => {
+    setCurrentAdmin('')
+  }
+
   const addUser = async (user) => {
 
     const newProfile = await CreateProfile(user);
@@ -82,6 +81,10 @@ function App() {
     setSucccessMessageOpen(true)
     setSuccessMessage('Successfully created associated profile!')
   };
+
+  const handleNewUserFormOpen = () => {
+    setShowNewUserForm(true)
+  }
 
   const handleLoginOpen = () => {
     setShowAdminLogin(true)
@@ -98,54 +101,11 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <Navbar />
-        {/* <div style={{
-          display: 'flex',
-          justifyContent: 'space-between'
-        }}>
-          <div style={{
-            flex: '1'
-          }}>
-            <h2 className="header-text">OrangeHub</h2>
-          </div>
-          {
-            currentAdmin &&
-            <div style={{
-              flex: '0 0 30%',
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              alignItems: 'center',
-              paddingRight: '1rem'
-            }}>
-                <div>
-                  <span>Currently logged in as: {currentAdmin.name}</span>
-                </div>
-              <div onClick={() => setShowNewUserForm(!showNewUserForm)}>
-                <AiOutlineUserAdd color="white" size='2rem'/>
-                <p>Create New Profile</p>
-              </div>
-              <div onClick={() => setCurrentAdmin('')}>
-                <IoIosLogOut color="white" size='2rem'/>
-                <p>Log Out</p>
-              </div> 
-            </div>
-          }
-          {
-            !currentAdmin &&
-            <div 
-            style={{
-              flex: '0 0 20%',
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              alignItems: 'center',
-              paddingRight: '1rem'
-            }}
-            onClick={() => handleLoginOpen()}>
-              <IoIosLogIn color="white" size='2rem'/>
-              <p>Log In</p>
-            </div>
-          }
-        </div> */}
+        <Navbar 
+        currentAdmin={currentAdmin} 
+        handleNewUserFormOpen={handleNewUserFormOpen} 
+        handleLoginOpen={handleLoginOpen}
+        handleLogout={handleLogout}/>
       </header>
       <main>
   

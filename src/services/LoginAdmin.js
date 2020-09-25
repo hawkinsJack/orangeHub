@@ -14,8 +14,6 @@ const LoginAdmin = async ({email, password}) => {
     }
 
     const response = await fetch('http://localhost:8080/api/login', configObj);
-
-    console.log(response)
     const jsonData = await response.json();
 
     return jsonData;
