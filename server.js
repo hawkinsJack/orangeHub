@@ -1,3 +1,4 @@
+const hostname = 'http://ec2-3-137-217-148.us-east-2.compute.amazonaws.com/';
 const express = require('express');
 const cors = require('cors');
 const { response } = require('express');
@@ -338,7 +339,7 @@ server.post('/api/login', (req, res) => {
 
 });
 
-server.listen(port);
+server.listen(port, hostname);
 console.log(`Sever started, listening on port ${port}`);
 
 
