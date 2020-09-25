@@ -6,10 +6,12 @@
 
 }
 .header{
-   color: white;
+   color: #ff8200;
    background-color: #ff8200;
    height: 100px;
-   margin-bottom: 100px
+   margin-bottom: 100px;
+   padding-bottom: 1rem;
+   border-bottom: 'solid #ff8200 2px'
 }
 .header-text{
   font-size: 5rem;
@@ -27,6 +29,8 @@
 @media screen and (min-width: 401px) {
   .header{
     height: 80px;
+    color: #ff8200;
+    background-color: #ff8200;
   }
   .header-text{
     font-size: 4rem;
