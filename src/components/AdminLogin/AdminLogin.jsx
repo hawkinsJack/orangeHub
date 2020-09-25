@@ -47,10 +47,10 @@ const AdminLogin = ({ loginAdmin, open, handleClose }) => {
                         onChange={(e) => handleUserPasswordInput(e)}
                         fullWidth
                     />
-                   <button type="submit">
+                   <button type="submit" class="btn btn-outline-secondary mr-2 mt-2">
                        Login
                    </button>
-                   <button onClick={() => handleClose()}>
+                   <button onClick={() => handleClose()} class="btn btn-outline-secondary mt-2">
                        Close
                    </button>
                 </form>

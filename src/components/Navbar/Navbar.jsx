@@ -7,7 +7,8 @@ const Navbar = ({ currentAdmin, handleNewUserFormOpen, handleLoginOpen, handleLo
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
-            <span className="navbar-brand">OrangeHub</span>
+            <img src="/OrangeHubLogo.png" width="60" height="60" class="d-inline-block align-top mr-3" alt="" loading="lazy" ></img>
+            <span className="navbar-brand-orange">OrangeHub</span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

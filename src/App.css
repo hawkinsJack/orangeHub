@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 400px) {
   .header{
-    height: 50px;
+    height: 85px;
   }
   .header-text{
     font-size: 2.5rem;
@@ -28,7 +28,7 @@
 }
 @media screen and (min-width: 401px) {
   .header{
-    height: 80px;
+    height: 85px;
     color: #ff8200;
     background-color: #ff8200;
   }
@@ -37,6 +37,14 @@
     font-family: sans-serif; 
   }
 } 
+@media screen and (min-width: 1000px) {
+  .header{
+    height: 120px;
+    color: #ff8200;
+    background-color: #ff8200;
+  }
+}
+
 /* mobile screen and above*/
 .profile-name{
   font-size: 2rem;
